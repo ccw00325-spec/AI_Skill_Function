@@ -119,6 +119,14 @@ feats = re.findall(r"^Feature:? ", skill, re.M)
 bad_feats = [l for l in skill_lines if l.startswith("Feature ") and l != "Feature 로그인 차단 정책"]
 check("Feature 콜론 누락은 예시 17 원문 보존 블록뿐", not bad_feats, str(bad_feats))
 
+# 11. 8.1 빈칸 체크리스트(원문 이후 사용자 추가 요구)
+check("8.1 빈칸 체크리스트 절이 8절과 9절 사이에 있음",
+      "## 8.1 빈칸 체크리스트 (추가 요구, 2026-10-06)" in skill_lines
+      and skill_lines.index("## 8.1 빈칸 체크리스트 (추가 요구, 2026-10-06)") < skill_lines.index("## 9. 구현 및 검증 규칙"))
+check("8.1 표시 규칙(- [x]·- [ ]·✅·⬜·➖·❔) 정의", all(k in skill for k in ("`- [x]`", "`- [ ]`", "| ✅ |", "| ⬜ |", "| ➖ |", "| ❔ |")))
+check("8.1 관찰 동작은 결정 칸을 체크하지 않는다는 규칙", "코드에서 관찰한 동작은 구현 칸에만 반영한다." in skill)
+check("12.1 추가 점검 절", "### 12.1 추가 점검 (8.1 빈칸 체크리스트)" in skill_lines)
+
 width = max(len(n) for n, _, _ in results)
 fail = 0
 for name, ok, detail in results:
