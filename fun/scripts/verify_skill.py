@@ -106,7 +106,8 @@ stray = [
     skill_lines[i] for i in allowed_30
     if not (ex17_start <= i < ex17_end)
     and not skill_lines[i].startswith("7. 예시에서 사용한 정책과 수치를")
-    and not skill_lines[i].startswith(("6. 사용자 승인과 코드 관찰을", "- 사용자가 승인하지 않은 30분을", "6. 기존 코드의 30분 설정을"))
+    and not skill_lines[i].startswith(("6. 사용자 승인과 코드 관찰을", "- 사용자가 승인하지 않은 30분을", "6. 기존 코드의 30분 설정을",
+        "1. **예시 값을 끌어오지 않았는가.**", "- 질문의 선택지·예시에 11절 예시 값(30분 등)"))
 ]
 check("‘30분’이 사례·금지 규칙·점검 기준 밖에 없음", not stray, "\n".join(stray))
 
@@ -126,6 +127,14 @@ check("8.1 빈칸 체크리스트 절이 8절과 9절 사이에 있음",
 check("8.1 표시 규칙(- [x]·- [ ]·✅·⬜·➖·❔) 정의", all(k in skill for k in ("`- [x]`", "`- [ ]`", "| ✅ |", "| ⬜ |", "| ➖ |", "| ❔ |")))
 check("8.1 관찰 동작은 결정 칸을 체크하지 않는다는 규칙", "코드에서 관찰한 동작은 구현 칸에만 반영한다." in skill)
 check("12.1 추가 점검 절", "### 12.1 추가 점검 (8.1 빈칸 체크리스트)" in skill_lines)
+
+# 12. 0.1 보내기 전 점검·9.1 작업 보고(원문 이후 사용자 추가 요구)
+check("0.1 보내기 전 점검 절이 1절 앞에 있음",
+      "### 0.1 보내기 전 점검 (추가 요구, 2026-10-06)" in skill_lines
+      and skill_lines.index("### 0.1 보내기 전 점검 (추가 요구, 2026-10-06)") < skill_lines.index("## 1. 목적과 기본 원칙"))
+check("9.1 작업 보고 형식 8칸", all(f"| {i} | {k} |" in skill for i, k in enumerate(
+      ["결정이 필요한 것", "진행한 일", "잘된 점", "못한 점", "한계", "리스크", "남은 일", "하면 좋을 일"], 1)))
+check("12.2 추가 점검 절", "### 12.2 추가 점검 (0.1 보내기 전 점검, 9.1 작업 보고)" in skill_lines)
 
 width = max(len(n) for n, _, _ in results)
 fail = 0
