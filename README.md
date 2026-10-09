@@ -275,4 +275,10 @@ python fun/scripts/verify_skill.py
 
 ## 라이선스
 
-아직 정하지 않았습니다. 라이선스 파일이 없는 공개 저장소는 내려받아 볼 수는 있지만 고쳐서 다시 배포할 권리는 법적으로 주어지지 않습니다.
+이 프로젝트는 **Apache License 2.0**으로 배포됩니다. 자세한 조건은 [LICENSE](LICENSE)를 확인하세요.
+
+재배포하거나 수정본을 배포할 때에는 Apache-2.0의 조건에 따라 기존 저작권·라이선스·고지 사항을 유지해야 하며, [NOTICE](NOTICE)에 포함된 저작자 고지도 함께 보존해야 합니다.
+
+**Copyright 2026 ccw00325-spec**  
+Author / project URL: https://github.com/ccw00325-spec  
+Original repository: https://github.com/ccw00325-spec/AI_Skill_Function
