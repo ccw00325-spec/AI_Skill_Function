@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/banner.png" alt="Useful AI Skills — Built for Real Work, Not Just Demos" width="100%">
+</p>
+
 # AI_Skill_Function — `Fun` 스킬
 
 > “알아서 만들어 줘”라고 남겨 둔 빈칸을 AI가 대신 채우지 않게 하는 기능 명세·구현 스킬입니다.
