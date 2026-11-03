@@ -281,7 +281,7 @@ python fun/scripts/verify_skill.py
 
 이 프로젝트는 **Apache License 2.0**으로 배포됩니다. 자세한 조건은 [LICENSE](LICENSE)를 확인하세요.
 
-재배포하거나 수정본을 배포할 때에는 Apache-2.0의 조건에 따라 기존 저작권·라이선스·고지 사항을 유지해야 하며, [NOTICE](NOTICE)에 포함된 저작자 고지도 함께 보존해야 합니다.
+저작권은 Chan Woo Cho ([@ccw00325-spec](https://github.com/ccw00325-spec))에게 있습니다. 재배포 시 Apache 2.0 제4조에 따라 관련 저작권과 출처 고지를 보존해야 합니다. [LICENSE](LICENSE) · [NOTICE](NOTICE)
 
 **Copyright 2026 ccw00325-spec**  
 Author / project URL: https://github.com/ccw00325-spec  
